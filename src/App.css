@@ -13,17 +13,17 @@
   margin: 0 auto;
 }
 
-.App__yes {
-  float: right;
-}
-
-.App__no {
-  float: left;
-}
-
 .App__button {
   border: none;
   background-color: transparent;
+}
+
+.App__button.--right {
+  float: right;
+}
+
+.App__button.--left {
+  float: left;
 }
 
 .App__button:hover {
@@ -32,4 +32,14 @@
 
 .App__title {
   margin-bottom: 40px;
+}
+
+.App__acceptedCount {
+  color: #f4a736;
+  font-size: 16px;
+}
+
+.App__rejectedCount {
+  color: #6e6e6e;
+  font-size: 16px;
 }

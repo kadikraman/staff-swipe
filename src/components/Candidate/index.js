@@ -55,15 +55,14 @@ class Candidate extends Component {
     return (
       <Draggable
         axis="x"
-        onStart={this.onStart}
         onDrag={this.onDrag}
         onStop={this.onStop}
         position={{ x: 0, y: 0 }}
       >
         <div
           className={classnames('Candidate', {
-            '--positive': accept,
-            '--negative': reject,
+            '--accept': accept,
+            '--reject': reject,
           })}
         >
           <img

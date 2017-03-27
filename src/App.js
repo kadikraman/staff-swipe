@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import tail from 'lodash/fp/tail';
 
-import './App.css';
-
 import Accept from './components/Accept';
 import Reject from './components/Reject';
 import Stack from './components/Stack';
@@ -12,6 +10,8 @@ import chip from './assets/chip.jpg';
 import featherDuster from './assets/feather-duster.jpg';
 import lumiere from './assets/lumiere.jpg';
 import cogsworth from './assets/cogsworth.jpg';
+
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -24,34 +24,48 @@ class App extends Component {
         { name: 'Lumière', rating: 5, imageSrc: lumiere },
         { name: 'Cogsworth', rating: 2, imageSrc: cogsworth },
       ],
-      accepted: [],
-      rejected: [],
+      acceptedCount: 0,
+      rejectedCount: 0,
     };
   }
 
-  onClick = () => {
+  onAccept = () => {
+    const { candidates, acceptedCount } = this.state;
+
     this.setState({
-      candidates: tail(this.state.candidates),
+      candidates: tail(candidates),
+      acceptedCount: acceptedCount + 1,
+    });
+  };
+
+  onReject = () => {
+    const { candidates, rejectedCount } = this.state;
+
+    this.setState({
+      candidates: tail(candidates),
+      rejectedCount: rejectedCount + 1,
     });
   };
 
   render() {
-    const { candidates } = this.state;
+    const { candidates, acceptedCount, rejectedCount } = this.state;
 
     return (
       <div className="App">
         <h1 className="App__title">ROTA</h1>
         <Stack
           candidates={candidates}
-          onAccept={this.onClick}
-          onReject={this.onClick}
+          onAccept={this.onAccept}
+          onReject={this.onReject}
         />
         <div className="App__vote">
-          <button className="App__no App__button" onClick={this.onClick}>
+          <button className="App__button --left" onClick={this.onReject}>
             <Reject />
+            <div className="App__rejectedCount">{rejectedCount}</div>
           </button>
-          <button className="App__yes App__button" onClick={this.onClick}>
+          <button className="App__button --right" onClick={this.onAccept}>
             <Accept />
+            <div className="App__acceptedCount">{acceptedCount}</div>
           </button>
         </div>
       </div>

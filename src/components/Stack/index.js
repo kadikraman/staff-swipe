@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import take from 'lodash/fp/take';
 
 import Candidate from '../Candidate';
-
 import './style.css';
 
 const Stack = ({ candidates, onAccept, onReject }) => (
@@ -20,6 +19,9 @@ const Stack = ({ candidates, onAccept, onReject }) => (
         <Candidate {...candidate} onAccept={onAccept} onReject={onReject} />
       </div>
     ))}
+    {candidates.length === 0
+      ? <div className="Stack__placeholder">No more candidates.</div>
+      : null}
   </div>
 );
 

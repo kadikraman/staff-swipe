@@ -8,12 +8,12 @@
   transition: outline .5s;
 }
 
-.Candidate.--positive {
+.Candidate.--accept {
   outline: 5px solid #f4a736;
   transition: outline .5s;
 }
 
-.Candidate.--negative {
+.Candidate.--reject {
   outline: 5px solid #6e6e6e;
   transition: outline .5s;
 }
