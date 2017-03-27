@@ -9,6 +9,7 @@ describe('Candidate', () => {
     const props = {
       name: 'Mary Strawberry',
       rating: 3,
+      imageSrc: 'some/path',
     };
 
     const component = shallow(<Candidate {...props} />);
@@ -18,5 +19,8 @@ describe('Candidate', () => {
 
     const rating = component.find(Rating);
     expect(rating.props().rating).toBe(3);
+
+    const image = component.find('img');
+    expect(image.props().src).toBe('some/path');
   });
 });

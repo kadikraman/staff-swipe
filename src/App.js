@@ -7,16 +7,22 @@ import Checked from './components/Checked';
 import Error from './components/Error';
 import Stack from './components/Stack';
 
+import mrsPotts from './assets/mrs-potts.jpg';
+import chip from './assets/chip.jpg';
+import featherDuster from './assets/feather-duster.jpg';
+import lumiere from './assets/lumiere.jpg';
+import cogsworth from './assets/cogsworth.jpg';
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       candidates: [
-        { name: 'Mary Strawberry', rating: 3 },
-        { name: 'Merry Berry', rating: 5 },
-        { name: 'Cherry Licious', rating: 4 },
-        { name: 'Extra Candidate', rating: 1 },
-        { name: 'Extra Candidate2', rating: 2 },
+        { name: 'Mrs. Potts', rating: 5, imageSrc: mrsPotts },
+        { name: 'Chip', rating: 3, imageSrc: chip },
+        { name: 'Feather Duster', rating: 4, imageSrc: featherDuster },
+        { name: 'Lumière', rating: 5, imageSrc: lumiere },
+        { name: 'Cogsworth', rating: 2, imageSrc: cogsworth },
       ],
       accepted: [],
       rejected: [],

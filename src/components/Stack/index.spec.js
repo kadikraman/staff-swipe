@@ -11,6 +11,7 @@ describe('Stack', () => {
         {
           name: 'Mary Strawberry',
           rating: 3,
+          imageSrc: 'some/path',
         },
       ],
     };
@@ -20,14 +21,15 @@ describe('Stack', () => {
     const candidate = component.find(Candidate);
     expect(candidate.props().name).toBe('Mary Strawberry');
     expect(candidate.props().rating).toBe(3);
+    expect(candidate.props().imageSrc).toBe('some/path');
   });
 
   it('renders 3 candidates with the correct classes', () => {
     const props = {
       candidates: [
-        { name: 'Mary Strawberry', rating: 3 },
-        { name: 'Merry Berry', rating: 5 },
-        { name: 'Cherry Licious', rating: 4 },
+        { name: 'Mary Strawberry', rating: 3, imageSrc: 'some/path' },
+        { name: 'Merry Berry', rating: 5, imageSrc: 'some/path' },
+        { name: 'Cherry Licious', rating: 4, imageSrc: 'some/path' },
       ],
     };
 
@@ -55,10 +57,10 @@ describe('Stack', () => {
   it('only renders the first 3 candidates if more are passed in', () => {
     const props = {
       candidates: [
-        { name: 'Mary Strawberry', rating: 3 },
-        { name: 'Merry Berry', rating: 5 },
-        { name: 'Cherry Licious', rating: 4 },
-        { name: 'Extra Candidate', rating: 0 },
+        { name: 'Mary Strawberry', rating: 3, imageSrc: 'some/path' },
+        { name: 'Merry Berry', rating: 5, imageSrc: 'some/path' },
+        { name: 'Cherry Licious', rating: 4, imageSrc: 'some/path' },
+        { name: 'Extra Candidate', rating: 0, imageSrc: 'some/path' },
       ],
     };
 

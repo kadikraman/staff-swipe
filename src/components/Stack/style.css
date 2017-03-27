@@ -20,7 +20,7 @@
 
 .Stack__candidate.--middle {
   z-index: 2;
-  top: 10px;
+  top: 30px;
   left: 10px;
   width: calc(100% - 20px);
   transition: all .5s;
@@ -29,7 +29,7 @@
 
 .Stack__candidate.--bottom {
   z-index: 1;
-  top: 20px;
+  top: 60px;
   left: 20px;
   width: calc(100% - 40px);
   transition: all .5s;

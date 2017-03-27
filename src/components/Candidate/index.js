@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import Rating from '../Rating';
 import './style.css';
 
-const Candidate = ({ name, rating }) => (
+const Candidate = ({ name, rating, imageSrc }) => (
   <div className="Candidate">
-    <img src="http://placehold.it/300x300" alt="test" />
+    <img className="Candidate__image" src={imageSrc} alt={name} />
     <h3>{name}</h3>
     <Rating rating={rating} />
   </div>
@@ -13,6 +13,7 @@ const Candidate = ({ name, rating }) => (
 Candidate.propTypes = {
   name: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
+  imageSrc: PropTypes.string.isRequired,
 };
 
 export default Candidate;

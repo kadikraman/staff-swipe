@@ -17,7 +17,7 @@ const Stack = ({ candidates }) => (
         })}
         key={candidate.name}
       >
-        <Candidate name={candidate.name} rating={candidate.rating} />
+        <Candidate {...candidate} />
       </div>
     ))}
   </div>
@@ -28,6 +28,7 @@ Stack.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       rating: PropTypes.number.isRequired,
+      imageSrc: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

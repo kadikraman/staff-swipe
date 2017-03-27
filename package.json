@@ -27,6 +27,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.js\""
+    "prettier": "prettier --single-quote --trailing-comma all --write \"src/**/*.js\""
   }
 }
