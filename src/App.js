@@ -32,6 +32,8 @@ class App extends Component {
   onAccept = () => {
     const { candidates, acceptedCount } = this.state;
 
+    if (!candidates.length) return;
+
     this.setState({
       candidates: tail(candidates),
       acceptedCount: acceptedCount + 1,
@@ -40,6 +42,8 @@ class App extends Component {
 
   onReject = () => {
     const { candidates, rejectedCount } = this.state;
+
+    if (!candidates.length) return;
 
     this.setState({
       candidates: tail(candidates),

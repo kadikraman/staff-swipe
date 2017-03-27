@@ -17,7 +17,7 @@ const Rating = ({ rating }) => (
 );
 
 Rating.propTypes = {
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.oneOf([0, 1, 2, 3, 4, 5]).isRequired,
 };
 
 export default Rating;
