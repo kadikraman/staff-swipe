@@ -8,17 +8,4 @@ Run the app:
 yarn start
 ```
 
-Run the tests:
-```
-yarn test
-```
-
-Run the linter:
-```
-yarn lint
-```
-
-Run prettier:
-```
-yarn prettier
-```
+This app uses a the [Airbnb eslint base](https://www.npmjs.com/package/eslint-config-airbnb-base) for linting and [prettier](https://github.com/prettier/prettier) for code formatting. Run `yarn lint` for the linter and `yarn prettier` for prettier.
