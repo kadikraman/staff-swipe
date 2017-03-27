@@ -1,12 +1,18 @@
-import React from 'react';
-import './style.css';
+import React, { PropTypes } from 'react';
 import Rating from '../Rating';
+import './style.css';
 
-const Candidate = () => (
+const Candidate = ({ name, rating }) => (
   <div className="Candidate">
     <img src="http://placehold.it/300x300" alt="test" />
-    <Rating rating={3} />
+    <h3>{name}</h3>
+    <Rating rating={rating} />
   </div>
 );
+
+Candidate.propTypes = {
+  name: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+};
 
 export default Candidate;

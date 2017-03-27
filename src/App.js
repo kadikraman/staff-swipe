@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="App__title">ROTA</h1>
-        <Candidate />
+        <Candidate name="Mart Strawberry" rating={3} />
         <div className="App__vote">
           <span className="App__no"><Error /></span>
           <span className="App__yes"><Checked /></span>

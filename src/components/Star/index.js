@@ -1,7 +1,9 @@
 import React from 'react';
 
+import './style.css';
+
 const Star = () => (
-  <span>
+  <span className="Star">
     <svg
       viewBox="0 0 358.521 358.521"
       height="20px"
