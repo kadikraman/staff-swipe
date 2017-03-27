@@ -2,6 +2,8 @@
 
 # Staff swipe
 
+See it in action [here](http://staff-swipe.s3-website.eu-west-2.amazonaws.com).
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Nifty little UI snippet to show how catering companies could choose employees via a Tinder-like swipecard UI.
