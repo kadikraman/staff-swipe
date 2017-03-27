@@ -11,7 +11,7 @@ const Rating = ({ rating }) => (
         }
         return [...acc, <Star key={current} />];
       },
-      []
+      [],
     )}
   </div>
 );

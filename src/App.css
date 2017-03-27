@@ -21,6 +21,10 @@
   float: left;
 }
 
+.App__yes:hover, .App__no:hover {
+  cursor: pointer;
+}
+
 .App__title {
   margin-bottom: 40px;
 }
