@@ -15,6 +15,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
     "mocha-each": "^1.0.3",
+    "prettier": "^0.22.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
@@ -23,6 +24,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.js\""
   }
 }

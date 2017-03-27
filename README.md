@@ -12,3 +12,13 @@ Run the tests:
 ```
 yarn test
 ```
+
+Run the linter:
+```
+yarn lint
+```
+
+Run prettier:
+```
+yarn prettier
+```

@@ -7,15 +7,21 @@ import Star from '../Star';
 import StarFilled from '../StarFilled';
 
 describe('Rating', () => {
-  forEach([0, 1, 2, 3, 4, 5])
-    .it('renders the correct stars when the rating is %s', rating => {
-      const component = shallow(<Rating rating={rating} />);
-      const filledStars = component.find(StarFilled);
-      const unfilledStars = component.find(Star);
+  forEach([
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+  ]).it('renders the correct stars when the rating is %s', rating => {
+    const component = shallow(<Rating rating={rating} />);
+    const filledStars = component.find(StarFilled);
+    const unfilledStars = component.find(Star);
 
-      expect(filledStars.length).toBe(rating);
-      expect(unfilledStars.length).toBe(5 - rating);
-    });
+    expect(filledStars.length).toBe(rating);
+    expect(unfilledStars.length).toBe(5 - rating);
+  });
 
   it('renders the stars in correct order', () => {
     const component = shallow(<Rating rating={3} />);
