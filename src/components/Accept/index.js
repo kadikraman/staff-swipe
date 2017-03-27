@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Checked = () => (
+const Accept = () => (
   <span>
     <svg viewBox="0 0 490.4 490.4" width="50px" height="50px" fill="#f4a736">
       <path
@@ -13,4 +13,4 @@ const Checked = () => (
   </span>
 );
 
-export default Checked;
+export default Accept;

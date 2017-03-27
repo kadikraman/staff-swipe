@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Error = () => (
+const Reject = () => (
   <span>
     <svg viewBox="0 0 52 52" width="50px" height="50px" fill="#6e6e6e">
       <path
@@ -13,4 +13,4 @@ const Error = () => (
   </span>
 );
 
-export default Error;
+export default Reject;

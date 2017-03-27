@@ -3,8 +3,8 @@ import tail from 'lodash/fp/tail';
 
 import './App.css';
 
-import Checked from './components/Checked';
-import Error from './components/Error';
+import Accept from './components/Accept';
+import Reject from './components/Reject';
 import Stack from './components/Stack';
 
 import mrsPotts from './assets/mrs-potts.jpg';
@@ -46,9 +46,13 @@ class App extends Component {
           onAccept={this.onClick}
           onReject={this.onClick}
         />
-        <div className="App__vote" onClick={this.onClick}>
-          <span className="App__no"><Error /></span>
-          <span className="App__yes"><Checked /></span>
+        <div className="App__vote">
+          <button className="App__no App__button" onClick={this.onClick}>
+            <Reject />
+          </button>
+          <button className="App__yes App__button" onClick={this.onClick}>
+            <Accept />
+          </button>
         </div>
       </div>
     );

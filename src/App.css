@@ -21,7 +21,12 @@
   float: left;
 }
 
-.App__yes:hover, .App__no:hover {
+.App__button {
+  border: none;
+  background-color: transparent;
+}
+
+.App__button:hover {
   cursor: pointer;
 }
 
