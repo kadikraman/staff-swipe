@@ -14,7 +14,7 @@ const Rating = ({ rating }) => {
     <div>
       {stars}
     </div>
-  )
+  );
 };
 
 Rating.propTypes = {
