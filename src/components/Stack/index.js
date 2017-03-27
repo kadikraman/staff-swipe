@@ -6,7 +6,7 @@ import Candidate from '../Candidate';
 
 import './style.css';
 
-const Stack = ({ candidates }) => (
+const Stack = ({ candidates, onAccept, onReject }) => (
   <div className="Stack">
     {take(3, candidates).map((candidate, index) => (
       <div
@@ -17,7 +17,7 @@ const Stack = ({ candidates }) => (
         })}
         key={candidate.name}
       >
-        <Candidate {...candidate} />
+        <Candidate {...candidate} onAccept={onAccept} onReject={onReject} />
       </div>
     ))}
   </div>
@@ -31,6 +31,8 @@ Stack.propTypes = {
       imageSrc: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  onAccept: PropTypes.func.isRequired,
+  onReject: PropTypes.func.isRequired,
 };
 
 export default Stack;

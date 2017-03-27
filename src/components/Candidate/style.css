@@ -3,6 +3,19 @@
   border-radius: 5px;
   padding: 5px 5px 20px 5px;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.05);
+  cursor: move;
+  outline: 5px solid transparent;
+  transition: outline .5s;
+}
+
+.Candidate.--positive {
+  outline: 5px solid #f4a736;
+  transition: outline .5s;
+}
+
+.Candidate.--negative {
+  outline: 5px solid #6e6e6e;
+  transition: outline .5s;
 }
 
 .Candidate__image {

@@ -41,7 +41,11 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="App__title">ROTA</h1>
-        <Stack candidates={candidates} />
+        <Stack
+          candidates={candidates}
+          onAccept={this.onClick}
+          onReject={this.onClick}
+        />
         <div className="App__vote" onClick={this.onClick}>
           <span className="App__no"><Error /></span>
           <span className="App__yes"><Checked /></span>
