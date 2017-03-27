@@ -1,3 +1,27 @@
 .App {
   text-align: center;
+  background-color: #F3F3F3;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.App__vote {
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.App__yes {
+  float: right;
+}
+
+.App__no {
+  float: left;
+}
+
+.App__title {
+  color: #444444;
+  margin-bottom: 40px;
 }
