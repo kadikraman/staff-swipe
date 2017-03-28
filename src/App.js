@@ -4,6 +4,7 @@ import tail from 'lodash/fp/tail';
 import Accept from './components/Accept';
 import Reject from './components/Reject';
 import Stack from './components/Stack';
+import { CANDIDATE_ID } from './components/Candidate';
 
 import mrsPotts from './assets/mrs-potts.jpg';
 import chip from './assets/chip.jpg';
@@ -12,6 +13,22 @@ import lumiere from './assets/lumiere.jpg';
 import cogsworth from './assets/cogsworth.jpg';
 
 import './App.css';
+
+const animate = animationClass => {
+  document.getElementById(
+    CANDIDATE_ID,
+  ).className += ` animated ${animationClass}`;
+};
+const animateAccept = () => animate('fadeOutRight');
+const animateReject = () => animate('fadeOutLeft');
+
+const timeout = fn =>
+  setTimeout(
+    () => {
+      fn();
+    },
+    500,
+  );
 
 class App extends Component {
   constructor() {
@@ -34,10 +51,12 @@ class App extends Component {
 
     if (!candidates.length) return;
 
-    this.setState({
-      candidates: tail(candidates),
-      acceptedCount: acceptedCount + 1,
-    });
+    animateAccept();
+    timeout(() =>
+      this.setState({
+        candidates: tail(candidates),
+        acceptedCount: acceptedCount + 1,
+      }));
   };
 
   onReject = () => {
@@ -45,10 +64,12 @@ class App extends Component {
 
     if (!candidates.length) return;
 
-    this.setState({
-      candidates: tail(candidates),
-      rejectedCount: rejectedCount + 1,
-    });
+    animateReject();
+    timeout(() =>
+      this.setState({
+        candidates: tail(candidates),
+        rejectedCount: rejectedCount + 1,
+      }));
   };
 
   render() {

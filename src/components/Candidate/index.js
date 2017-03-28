@@ -6,6 +6,7 @@ import Rating from '../Rating';
 import './style.css';
 
 const THRESHOLD = 100;
+export const CANDIDATE_ID = 'candidateId';
 
 class Candidate extends Component {
   static propTypes = {
@@ -22,6 +23,7 @@ class Candidate extends Component {
     this.state = {
       accept: false,
       reject: false,
+      xPos: 0,
     };
   }
 
@@ -31,6 +33,7 @@ class Candidate extends Component {
     this.setState({
       accept: x > THRESHOLD,
       reject: x < -THRESHOLD,
+      xPos: x,
     });
   };
 
@@ -45,34 +48,39 @@ class Candidate extends Component {
       this.setState({
         accept: false,
         reject: false,
+        xPos: 0,
       });
     }
   };
 
   render() {
     const { name, rating, imageSrc } = this.props;
-    const { accept, reject } = this.state;
+    const { accept, reject, xPos } = this.state;
+
     return (
       <Draggable
         axis="x"
         onDrag={this.onDrag}
         onStop={this.onStop}
-        position={{ x: 0, y: 0 }}
+        position={{ x: xPos, y: 0 }}
       >
-        <div
-          className={classnames('Candidate', {
-            '--accept': accept,
-            '--reject': reject,
-          })}
-        >
-          <img
-            className="Candidate__image"
-            src={imageSrc}
-            alt={name}
-            draggable={false}
-          />
-          <h3>{name}</h3>
-          <Rating rating={rating} />
+        <div>
+          <div
+            id={CANDIDATE_ID}
+            className={classnames('Candidate', {
+              '--accept': accept,
+              '--reject': reject,
+            })}
+          >
+            <img
+              className="Candidate__image"
+              src={imageSrc}
+              alt={name}
+              draggable={false}
+            />
+            <h3>{name}</h3>
+            <Rating rating={rating} />
+          </div>
         </div>
       </Draggable>
     );
